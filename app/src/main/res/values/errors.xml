@@ -1,0 +1,7 @@
+<resources>
+    <string name="field_not_null">Field cannot be empty</string>
+    <string name="field_not_empty">Field cannot be empty</string>
+
+    <string name="gender_not_valid">Select a gender</string>
+
+</resources>

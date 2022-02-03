@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="fr.uha.jacquey.hospitalbed.management.ui.service.ServiceFragment">
+
+    <data>
+        <import type="fr.uha.jacquey.hospitalbed.management.model.Gender" />
+        <variable name="vm" type="fr.uha.jacquey.hospitalbed.management.ui.service.ServiceFragment" />
+        <variable name="takePicture" type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp">
+
+        <com.google.android.material.textfield.TextInputLayout android:id="@+id/name" android:layout_width="0dp" android:layout_height="wrap_content" android:hint="@string/name" app:error="@{vm.nameValidator}" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textServiceName" android:text="@={vm.name}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout></androidx.core.widget.NestedScrollView>
+</layout>

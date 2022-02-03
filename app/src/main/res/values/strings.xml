@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">Teams</string>
+
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_splash">upcoming</string>
+
+    <string name="title_service_list">service list</string>
+    <string name="title_bed_list">bed list</string>
+    <string name="title_Patient_list">Patient list</string>
+    <string name="title_Patient_edit">edit Patient %1$s</string>
+    <string name="title_bed_edit">edit bed %1$s</string>
+    <string name="title_service_edit">edit service %1$s</string>
+    <string name="title_Patient_picker">Choose a patient</string>
+    <string name="title_time_picker">Choose a time</string>
+    <string name="title_date_time_picker">Choose a date and a time</string>
+
+    <string name="permissions_store_required">Allow high resolution pictures</string>
+    <string name="permission_request_rationale_title">We need these permissions</string>
+    <string name="permissions_request_again">Request again</string>
+
+    <string name="menu_save">save</string>
+    <string name="menu_populate">populate</string>
+
+    <string name="girl">girl</string>
+    <string name="boy">boy</string>
+    <string name="gender">gender</string>
+    <string name="firstName">first name</string>
+    <string name="lastName">last name</string>
+    <string name="nodate">no date</string>
+    <string name="Patient">Patient</string>
+    <string name="service">service</string>
+    <string name="bed">bed</string>
+    <string name="numero">numero</string>
+    <string name="no">no</string>
+    <string name="all">all</string>
+    <string name="service_not_set">service non donnee</string>
+    <string name="Patient_not_set">Patient non donne</string>
+    <string name="name">name</string>
+    <string name="title_service_picker">service picker</string>
+    <string name="day_too_small">jour en dessous de 1</string>
+    <string name="day_too_big">jour au dessus de 31</string>
+    <string name="month_too_small">mois en dessous de 1</string>
+    <string name="month_too_big">mois au dessus de 12</string>
+    <string name="month_over_30">les mois de avril,juin,septembre et novembre au dessus de 30 jours</string>
+    <string name="february_over_29">février au dessus de 29 jours</string>
+    <string name="service_list">liste des services</string>
+</resources>

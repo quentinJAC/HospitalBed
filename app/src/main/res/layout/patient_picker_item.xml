@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable name="p" type="fr.uha.jacquey.hospitalbed.management.model.PatientPicker" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@{p.Patient.gender}"
+            android:imageLevel="@{p.Patient.gender.ordinal()}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/gender" />
+
+        <TextView
+            android:id="@+id/firstName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@{p.Patient.firstName}"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="firstname" />
+
+        <TextView
+            android:id="@+id/lastname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@{p.Patient.lastName}"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/firstName"
+            app:layout_constraintStart_toEndOf="@+id/firstName"
+            tools:text="lastname" />
+
+        <TextView
+            android:id="@+id/incomingDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@{@p.Patient.incomingDate)}"
+            app:layout_constraintBottom_toBottomOf="@+id/lastname"
+            app:layout_constraintStart_toEndOf="@+id/lastname"
+            tools:text="incomingDate" />
+
+        <TextView
+            android:id="@+id/dischargeDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@{@p.Patient.dischargeDate)}"
+            app:layout_constraintBottom_toBottomOf="@+id/incomingDate"
+            app:layout_constraintStart_toEndOf="@+id/incomingDate"
+            tools:text="incomingDate" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

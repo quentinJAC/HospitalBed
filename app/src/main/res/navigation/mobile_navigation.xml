@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_PatientList">
+
+    <fragment
+        android:id="@+id/navigation_PatientList"
+        android:name="fr.uha.jacquey.hospitalbed.management.ui.patient.PatientListFragment"
+        android:label="@string/title_Patient_list"
+        tools:layout="@layout/patient_list_fragment" >
+        <action
+            android:id="@+id/action_navigation_PatientList_to_Patient"
+            app:destination="@id/navigation_Patient" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_Patient"
+        android:name="fr.uha.jacquey.hospitalbed.management.ui.patient.PatientFragment"
+        tools:layout="@layout/patient_fragment" >
+        <argument
+            android:name="id"
+            app:argType="long"
+            android:defaultValue="0L" />
+        </fragment>
+    <fragment
+        android:id="@+id/navigation_bedList"
+        android:name="fr.uha.jacquey.hospitalbed.management.ui.bed.BedListFragment"
+        android:label="@string/title_bed_list" >
+        <action
+            android:id="@+id/action_navigation_bedList_to_bed"
+            app:destination="@id/navigation_bed" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_bed"
+        android:name="fr.uha.jacquey.hospitalbed.management.ui.bed.BedFragment"
+        tools:layout="@layout/bed_fragment" >
+        <argument
+            android:name="id"
+            app:argType="long"
+            android:defaultValue="0L" />
+        <action
+            android:id="@+id/action_navigation_bed_to_servicePicker"
+            app:destination="@id/navigation_servicePicker" />
+        <action
+            android:id="@+id/action_navigation_bed_to_PatientPicker"
+            app:destination="@id/navigation_PatientPicker" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_serviceList"
+        android:name="fr.uha.jacquey.hospitalbed.management.ui.service.ServiceListFragment"
+        android:label="@string/service_list"
+        tools:layout="@layout/service_list_fragment" >
+        <action
+            android:id="@+id/action_navigation_serviceList_to_service"
+            app:destination="@id/navigation_service" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_service"
+        android:name="fr.uha.jacquey.hospitalbed.management.ui.service.ServiceFragment"
+        tools:layout="@layout/service_fragment" >
+        <argument
+            android:name="id"
+            app:argType="long"
+            android:defaultValue="0L" />
+    </fragment>
+    <dialog
+        android:id="@+id/navigation_servicePicker"
+        android:name="fr.uha.jacquey.hospitalbed.management.ui.picker.ServicePickerFragment"
+        android:label="@string/title_service_picker" >
+        <argument
+            android:name="date"
+            app:argType="long"
+            android:defaultValue="0L" />
+        <argument
+            android:name="requestKey"
+            app:argType="string"
+            android:defaultValue='""' />
+        <argument
+            android:name="title"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </dialog>
+    <dialog
+        android:id="@+id/navigation_PatientPicker"
+        android:name="fr.uha.jacquey.hospitalbed.management.ui.picker.PatientPickerFragment"
+        android:label="@string/title_Patient_picker">
+
+        <argument
+            android:name="requestKey"
+            app:argType="string"
+            android:defaultValue='""' />
+        <argument
+            android:name="title"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </dialog>
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="fr.uha.jacquey.hospitalbed.management.ui.dashboard.DashboardFragment"
+        android:label="@string/title_dashboard" />
+
+</navigation>

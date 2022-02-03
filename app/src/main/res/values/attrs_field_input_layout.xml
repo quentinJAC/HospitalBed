@@ -1,0 +1,8 @@
+<resources>
+    <declare-styleable name="FieldInputLayout">
+        <attr name="hint" format="string|reference" />
+        <attr name="error" format="string|reference" />
+        <attr name="errorColor" format="color|reference" />
+        <attr name="backgroundColor" format="color|reference" />
+    </declare-styleable>
+</resources>

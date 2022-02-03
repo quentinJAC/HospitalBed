@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="fr.uha.jacquey.hospitalbed.management.ui.Patient.PatientFragment">
+
+    <data>
+        <import type="fr.uha.jacquey.hospitalbed.management.model.Gender" />
+        <variable name="vm" type="fr.uha.jacquey.hospitalbed.management.ui.Patient.PatientFragment" />
+        <variable name="takePicture" type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp">
+
+            <com.google.android.material.textfield.TextInputLayout android:id="@+id/firstName" android:layout_width="0dp" android:layout_height="wrap_content" android:hint="@string/firstName" app:error="@{vm.firstNameValidator}" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textPatientName" android:text="@={vm.firstName}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lastName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/lastName"
+                app:error="@{vm.lastNameValidator}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/firstName">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPatientName"
+                    android:text="@={vm.lastName}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <fr.uha.jacquey.hospitalbed.view.FieldInputLayout
+                android:id="@+id/gender"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:error="@{vm.genderValidator}"
+                app:hint="@string/gender"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lastName">
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/no"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="@{vm.gender == Gender.NO}"
+                        android:onClick="@{() -> vm.setGender(Gender.NO)}"
+                        android:text="@string/no" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/girl"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="@{vm.gender == Gender.GIRL}"
+                        android:onClick="@{() -> vm.setGender(Gender.GIRL)}"
+                        android:text="@string/girl" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/boy"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="@{vm.gender == Gender.BOY}"
+                        android:onClick="@{() -> vm.setGender(Gender.BOY)}"
+                        android:text="@string/boy" />
+                </RadioGroup>
+
+            </fr.uha.jacquey.hospitalbed.view.FieldInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/incomingDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/height"
+                app:error="@{vm.incomingDateValidator}"
+                app:layout_constraintEnd_toStartOf="@+id/dischargeDate"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gender">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:text="@={vm.incomingDate}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/dischargeDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/weight"
+                app:error="@{vm.dischargeDateValidator}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/incomingDate"
+                app:layout_constraintTop_toTopOf="@+id/incomingDate">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:text="@={vm.dischargeDate}" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</layout>
